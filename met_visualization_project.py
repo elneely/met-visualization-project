@@ -1,5 +1,6 @@
-# Run this app with `python app.py` and
+# Run this app with `python3 met_visualization_project.py` and
 # visit http://127.0.0.1:8050/ in your web browser.
+#
 # Note: MetObjects.csv is a CSV file containing data about the collection of
 # the Metropolitan Museum of Art.  It can be accessed at
 # https://github.com/metmuseum/openaccess
@@ -413,21 +414,21 @@ app.layout = html.Div([
             html.Div([   
                 html.Img(src=get_asset_url('degas_class_smaller.jpg'), 
                          alt="Picture of the painting The Dance Class by Edgar Degas", 
-                         width="400", 
-                         height="432",
                          title="The Dance Class, Edgar Degas"),],
-                style={'display': 'inline-block', 'padding': '0 50', 'width': '24%'},),
+                style={'padding': '0 50'},
+                ),
 
             html.Div([
                 html.H3('Museum Highlights',style={'textAlign': 'center'}),
                 dcc.Markdown(highlights_text)], 
-                style={'display': 'inline-block', 'align': 'center', 'vertical-align': 'top', 'width': '45%',}),
+                style={'margin': '0 2%'}
+                ),
 
             html.Div([   
                 dcc.Graph(id='geo-map-highlights', figure = fig5)],
-                style={ 'display': 'inline-block',  
-                       'float': 'right', "border":"5px black solid", "height": "425", "width": "425", "margin": "0 0 5"}),
-        ],style={'margin':'2em'}),
+               style={"border":"5px black solid", "height": "425", "width": "425", "margin": "0 0 5"}
+                       ),
+        ],style={'margin':'2em', 'display': 'flex'}),
     ]),
 ],style={"background-color": background_color, "font-family": "Serif", "margin": "0px"})
 
